@@ -1,0 +1,45 @@
+using namespace std;
+
+#include <iostream>
+#include <stdio.h>
+
+int greatestCommonDivisor(int m, int n)
+{
+    int r;
+
+    /* Check For Proper Input */
+    if((m == 0) || (n == 0))
+        return 0;
+    if (m < 0) m = -m;
+    if (n < 0) n = -n;
+
+    while(1)
+    {
+        r = m % n;
+        if(r == 0)
+            return n;
+        m = n;
+        n = r;
+    }
+    
+
+    return n;
+}
+
+int main(void)
+{
+    int num1, num2;
+    
+    cout << "Welcome to Euclid's Algorithm Calculator in C++." << endl;
+    cout << "Please enter your first number:" << endl;
+    cin >> num1;
+    cout << "Please enter your second number:" << endl;
+    cin >> num2;
+    
+    int gcd = greatestCommonDivisor(num1, num2); 
+
+    cout << "The GCD of " << num1 << " and " << num2 << " is " << gcd << ".";
+   
+
+    return 0;
+}
