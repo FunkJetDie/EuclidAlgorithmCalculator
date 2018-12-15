@@ -1,13 +1,12 @@
 using namespace std;
 
 #include <iostream>
-#include <stdio.h>
 
 int greatestCommonDivisor(int m, int n)
 {
     int r;
 
-    /* Check For Proper Input */
+   //Check for correct input.
     if((m == 0) || (n == 0))
         return 0;
     if (m < 0) m = -m;
